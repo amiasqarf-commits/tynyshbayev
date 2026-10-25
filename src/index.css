@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-parchment: #fbf7f0;
+    --bg-card: #f5ece0;
+    --border-parchment: #d8c5af;
+    --ink-dark: #1a1512;
+    --ink-muted: #5e4f44;
+    --accent-terracotta: #8d4f27;
+    --accent-gold: #b38234;
+    --accent-rail: #2c4436;
+  }
+
+  body {
+    background-color: #fbf7f0;
+    color: #1a1512;
+    font-family: 'Lora', Georgia, serif;
+    background-image: 
+      radial-gradient(#d6c2a8 0.75px, transparent 0.75px),
+      radial-gradient(#e5d7c3 0.75px, #fbf7f0 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', 'Lora', serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-sans-ui {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom parchment texture card */
+.parchment-card {
+  background: linear-gradient(135deg, #fffcf7 0%, #f7efe2 100%);
+  border: 1px solid #dfcfbc;
+  box-shadow: 0 4px 20px -2px rgba(90, 60, 30, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.parchment-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.parchment-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -4px rgba(90, 60, 30, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06);
+  border-color: #be9f7b;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1e6d4;
+}
+::-webkit-scrollbar-thumb {
+  background: #c2a88e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9d7d60;
+}
+
+/* Railway animated line dash */
+@keyframes trainDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.railway-animated {
+  stroke-dasharray: 6 4;
+  animation: trainDash 2.5s linear infinite;
+}
+
+/* Subtle Kazakh pattern border */
+.kazakh-border-t {
+  border-top: 3px double #bda080;
+}
+
+.kazakh-border-b {
+  border-bottom: 3px double #bda080;
+}
