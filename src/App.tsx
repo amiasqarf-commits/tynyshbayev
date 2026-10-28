@@ -3,10 +3,11 @@ import { Navbar } from './components/Navbar';
 import { BiographicalAlbum } from './components/BiographicalAlbum';
 import { PhotoGallery } from './components/PhotoGallery';
 import { WorksLibrary } from './components/WorksLibrary';
+import { ArchiveDocuments } from './components/ArchiveDocuments';
 import { Footer } from './components/Footer';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'album' | 'gallery' | 'works'>('album');
+  const [activeTab, setActiveTab] = useState<'album' | 'gallery' | 'works' | 'archive'>('album');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   return (
@@ -86,6 +87,8 @@ export default function App() {
         {activeTab === 'gallery' && <PhotoGallery />}
 
         {activeTab === 'works' && <WorksLibrary />}
+
+        {activeTab === 'archive' && <ArchiveDocuments />}
       </main>
 
       {/* Footer */}

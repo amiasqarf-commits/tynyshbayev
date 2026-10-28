@@ -3,12 +3,13 @@ import {
   BookOpen, 
   Camera, 
   Search, 
-  X
+  X,
+  FolderArchive
 } from 'lucide-react';
 
 interface NavbarProps {
-  activeTab: 'album' | 'gallery' | 'works';
-  setActiveTab: (tab: 'album' | 'gallery' | 'works') => void;
+  activeTab: 'album' | 'gallery' | 'works' | 'archive';
+  setActiveTab: (tab: 'album' | 'gallery' | 'works' | 'archive') => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
 }
@@ -103,6 +104,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <FileTextIcon size={14} />
               <span>Ғылыми еңбектері</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('archive')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium font-sans-ui transition-all ${
+                activeTab === 'archive'
+                  ? 'bg-[#8d4f27] text-white font-semibold shadow-sm'
+                  : 'bg-[#f4ebe0] text-[#3d2f26] hover:bg-[#ebdcc9]'
+              }`}
+            >
+              <FolderArchive size={14} />
+              <span>Архив құжаттары</span>
             </button>
           </div>
         </div>
